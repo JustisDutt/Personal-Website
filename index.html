@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Justis Dutt's software engineering portfolio showcasing projects in Java, Python, JavaScript, and more.">
+  <meta name="keywords" content="Justis Dutt, software engineer, portfolio, computer science, Java, Python, JavaScript, React, web development">
+  <meta name="author" content="Justis Dutt">
+  <title>Justis Dutt - Software Engineer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-initials">JD</span>
+      </div>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" role="banner" aria-label="Home section">
+    <div class="animated-bg"></div>
+    <div class="home-content">
+      <h1 id="typed-name"></h1>
+      <p class="subtitle">Software Engineer | Bachelor's of Science in Computer Science</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="section" role="region" aria-label="About section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>My name is Justis Dutt, I will be graduating in December 2025 from California State University, Stanislaus with a Bachelor's in Computer Science. I am currently a Peer Educator at my university, helping over 200+ fellow students with programming and mathematical concepts. I also work part-time for a small construction company, Baron's Construction Services, as a Construction Technologist, where my main task is to discover, design, and implement the standard operating procedures of technology to increase efficiency in the workforce and business management.</p>
+      <p>My journey in tech has been driven by a love for solving complex problems and building innovative, user-focused solutions. I thrive in collaborative environments and I am always eager to learn new technologies and methodologies.</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section" role="region" aria-label="Skills section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">Java</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">HTML/CSS</div>
+      <div class="skill">React</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Git</div>
+      <div class="skill">SQLite</div>
+      <div class="skill">Google Cloud</div>
+      <div class="skill">Linux</div>
+      <div class="skill">DSA</div>
+      <div class="skill">CI/CD</div>
+      <div class="skill">Initiative</div>
+      <div class="skill">Adaptability</div>
+      <div class="skill">Teamwork</div>
+      <div class="skill">Time Management</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section" role="region" aria-label="Projects section">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Customer Database for Construction Company</h3>
+        <p>A comprehensive Java-based internal web application built from scratch for a small construction company. Utilized SQLite to manage customers, projects, streamlining business operations. (Internal project, not publicly available)</p>
+      </div>
+      <div class="project">
+        <h3>Rational Agent PacMan Game</h3>
+        <p>A Python-based PacMan game with an AI-driven rational agent using search algorithms to navigate the maze.</p>
+        <a href="https://github.com/JustisDutt/Rational-Agent-PacMan-Game" target="_blank" aria-label="View Rational Agent PacMan Game on GitHub">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Network Game TicTacToe</h3>
+        <p>A networked TicTacToe game built with Java, featuring real-time multiplayer functionality using TCP sockets.</p>
+        <a href="https://github.com/JustisDutt/Network-Game-TicTacToe" target="_blank" aria-label="View Network Game TicTacToe on GitHub">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Multicast Stock Ticker</h3>
+        <p>A Java-based multicast stock ticker application where the server reads stock names from a text file and multicasts them to a group, with clients joining to receive updates.</p>
+        <a href="https://github.com/JustisDutt/Multicast-Stock-Ticker-Java" target="_blank" aria-label="View Multicast Stock Ticker on GitHub">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Java Calculator</h3>
+        <p>A Java-based calculator with a Swing GUI, supporting basic arithmetic operations, keyboard input, and precise calculations using BigDecimal.</p>
+        <a href="https://github.com/JustisDutt/Calculator-Swing-GUI" target="_blank" aria-label="View Java Calculator on GitHub">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" role="region" aria-label="Contact section">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><span class="contact-badge">Email: <a href="mailto:justisdutt@gmail.com" aria-label="Email Justis Dutt">justisdutt@gmail.com</a></span></p>
+      <p><span class="contact-badge">LinkedIn: <a href="https://www.linkedin.com/in/justis-dutt-951834224/" target="_blank" aria-label="Visit Justis Dutt's LinkedIn profile">LinkedIn</a></span></p>
+      <p><span class="contact-badge">GitHub: <a href="https://github.com/JustisDutt" target="_blank" aria-label="Visit Justis Dutt's GitHub profile">GitHub</a></span></p>
+    </div>
+    <form id="contact-form" aria-label="Contact form">
+      <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your name">
+      <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your email">
+      <textarea id="message" name="message" placeholder="Your Message" required aria-label="Your message"></textarea>
+      <button type="submit" class="btn" aria-label="Send message">Send Message</button>
+    </form>
+  </section>
+
+  <footer role="contentinfo" aria-label="Footer">
+    <p>&copy; 2025 Justis Dutt. All rights reserved.</p>
+  </footer>
+</body>
+</html>
