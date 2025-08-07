@@ -226,6 +226,21 @@ h2 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
   font-size: 1.1rem;
+  display: flex; /*flexbox for side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+}
+
+/* About Image */
+.about-image {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-right: 1rem; /* Space between image and text */
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* About Text */
+.about-text {
+  flex: 1; /* Allow text to take remaining space */
 }
 
 /* Skills Section */
