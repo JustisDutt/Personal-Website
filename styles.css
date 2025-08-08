@@ -226,21 +226,22 @@ h2 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
   font-size: 1.1rem;
-  display: flex; /*flexbox for side-by-side layout */
-  align-items: flex-start; /* Align items at the top */
+  display: flex;
+  flex-direction: row; /* Side-by-side for desktop */
+  align-items: flex-start;
+  gap: 1rem; /* Space between image and text */
 }
 
 /* About Image */
 .about-image {
   max-width: 200px;
   border-radius: 10px;
-  margin-right: 1rem; /* Space between image and text */
-  flex-shrink: 0; /* Prevent image from shrinking */
+  flex-shrink: 0;
 }
 
 /* About Text */
 .about-text {
-  flex: 1; /* Allow text to take remaining space */
+  flex: 1;
 }
 
 /* Skills Section */
@@ -456,6 +457,23 @@ footer {
 
   .skills-container {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack image above text on mobile */
+    align-items: center; /* Center items */
+  }
+
+  .about-image {
+    max-width: 100%; /* Allow image to scale with container */
+    width: 100%; /* Full width for better visibility */
+    max-height: 300px; /* Limit height to prevent oversized images */
+    margin: 0 0 1rem 0; /* Remove right margin, add bottom margin */
+  }
+
+  .about-text {
+    width: 100%; /* Full width for text */
+    text-align: center; /* Center text for better readability */
   }
 
   #contact form {
