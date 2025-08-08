@@ -237,6 +237,7 @@ h2 {
   max-width: 200px;
   border-radius: 10px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 /* About Text */
@@ -506,3 +507,4 @@ footer {
     padding: 0.6rem 1rem;
   }
 }
+
