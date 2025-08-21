@@ -1,3 +1,10 @@
+/* Define color variables */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #0d54c6;
+  --accent-color: #f1f5f9;
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
@@ -8,8 +15,8 @@
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #f5f6f5;
+  color: var(--primary-color);
+  background: var(--accent-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -21,7 +28,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #1a1a1a;
+  background: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +38,7 @@ body {
 .loader {
   width: 50px;
   height: 50px;
-  border: 5px solid #1e3a8a;
+  border: 5px solid var(--secondary-color);
   border-top-color: transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -43,7 +50,7 @@ body {
 
 /* Navigation */
 nav {
-  background: #1a1a1a;
+  background: var(--primary-color);
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -98,7 +105,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #1e3a8a;
+  color: var(--secondary-color);
 }
 
 .hamburger {
@@ -144,7 +151,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #006d77, #1e3a8a, #1f6feb, #2ecc71);
+  background: linear-gradient(135deg, #006d77, #8c26a5, #3d84ee, #2ecc71);
   background-size: 400%;
   animation: gradientShift 20s ease infinite;
   z-index: -1;
@@ -181,7 +188,7 @@ h1 {
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: #000000;
+  background: var(--secondary-color);
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
@@ -194,6 +201,7 @@ h1 {
 .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
 }
 
 .button-container {
@@ -215,21 +223,21 @@ h2 {
   font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1a1a1a;
+  color: var(--primary-color);
 }
 
 /* About Section */
 .about-content {
-  background: #fff;
+  background: var(--accent-color);
   padding: 2.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
   font-size: 1.1rem;
   display: flex;
-  flex-direction: row; /* Side-by-side for desktop */
+  flex-direction: row;
   align-items: flex-start;
-  gap: 1rem; /* Space between image and text */
+  gap: 1rem;
 }
 
 /* About Image */
@@ -255,7 +263,7 @@ h2 {
 }
 
 .skill {
-  background: #1e3a8a;
+  background: var(--primary-color);
   color: #fff;
   padding: 1rem 1.8rem;
   border-radius: 50px;
@@ -271,6 +279,7 @@ h2 {
 
 .skill:hover {
   transform: scale(1.05);
+  background: var(--secondary-color);
 }
 
 /* Projects Section */
@@ -281,7 +290,7 @@ h2 {
 }
 
 .project {
-  background: #fff;
+  background: var(--accent-color);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -295,17 +304,17 @@ h2 {
 .project h3 {
   font-size: 1.8rem;
   margin-bottom: 0.8rem;
-  color: #1a1a1a;
+  color: var(--primary-color);
 }
 
 .project p {
   margin-bottom: 1.2rem;
-  color: #555;
+  color: #4b5563;
   font-size: 1.1rem;
 }
 
 .project a {
-  color: #1e3a8a;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -313,6 +322,7 @@ h2 {
 
 .project a:hover {
   text-decoration: underline;
+  color: var(--primary-color);
 }
 
 /* Contact Section */
@@ -337,7 +347,7 @@ h2 {
 
 .contact-badge {
   display: inline-block;
-  background: #1e3a8a;
+  background: var(--primary-color);
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -347,6 +357,7 @@ h2 {
 
 .contact-badge:hover {
   transform: scale(1.05);
+  background: var(--secondary-color);
 }
 
 #contact form {
@@ -361,15 +372,15 @@ h2 {
 #contact label {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #1e3a8a;
+  color: var(--primary-color);
 }
 
 #contact input,
 #contact textarea {
   padding: 1rem;
-  border: 2px solid #1e3a8a;
+  border: 2px solid var(--primary-color);
   border-radius: 10px;
-  background: #f0f4f8;
+  background: var(--accent-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   transition: box-shadow 0.3s ease;
@@ -379,7 +390,7 @@ h2 {
 #contact input:focus,
 #contact textarea:focus {
   outline: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 0 0 0 3px #1e3a8a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 0 0 0 3px var(--secondary-color);
 }
 
 #contact textarea {
@@ -391,13 +402,18 @@ h2 {
   align-self: center;
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
+  background: var(--secondary-color);
+}
+
+#contact button:hover {
+  background: var(--primary-color);
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem;
-  background: #1a1a1a;
+  background: var(--primary-color);
   color: #fff;
 }
 
@@ -423,7 +439,7 @@ footer {
     top: 60px;
     left: 0;
     width: 100%;
-    background: #1a1a1a;
+    background: var(--primary-color);
     padding: 1rem 0;
     z-index: 99;
   }
@@ -461,20 +477,20 @@ footer {
   }
 
   .about-content {
-    flex-direction: column; /* Stack image above text on mobile */
-    align-items: center; /* Center items */
+    flex-direction: column;
+    align-items: center;
   }
 
   .about-image {
-    max-width: 100%; /* Allow image to scale with container */
-    width: 100%; /* Full width for better visibility */
-    max-height: 300px; /* Limit height to prevent oversized images */
-    margin: 0 0 1rem 0; /* Remove right margin, add bottom margin */
+    max-width: 100%;
+    width: 100%;
+    max-height: 300px;
+    margin: 0 0 1rem 0;
   }
 
   .about-text {
-    width: 100%; /* Full width for text */
-    text-align: center; /* Center text for better readability */
+    width: 100%;
+    text-align: center;
   }
 
   #contact form {
@@ -507,4 +523,3 @@ footer {
     padding: 0.6rem 1rem;
   }
 }
-
