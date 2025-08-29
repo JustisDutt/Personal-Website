@@ -43,7 +43,7 @@ html[data-theme="light"] {
   --muted: #4b5563;
 }
 
-/* === Reset / base (kept from your style) === */
+/* === Reset / base === */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Inter', sans-serif;
@@ -54,12 +54,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Preloader (unchanged) */
+/* Preloader */
 #preloader { position: fixed; inset: 0; background: var(--primary-color); display: grid; place-items: center; z-index: 9999; }
 .loader { width: 50px; height: 50px; border: 5px solid var(--secondary-color); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Nav (unchanged layout; added theme toggle) */
+/* Nav */
 nav { background: var(--primary-color); padding: 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,.1); }
 .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: .75rem; }
 .logo { font-size: 1.5rem; font-weight: 700; color: #fff; cursor: pointer; }
@@ -81,7 +81,7 @@ nav { background: var(--primary-color); padding: 1rem; position: sticky; top: 0;
 .theme-toggle { border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; padding: .4rem .7rem; border-radius: 999px; cursor: pointer; }
 .theme-toggle:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ring); }
 
-/* Hero / Sections (your look) */
+/* Hero / Sections  */
 #home { position: relative; min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
 .animated-bg { position: absolute; inset: 0; background: linear-gradient(135deg,#df83d6,#8c26a5,#3d84ee,#2ecc71); background-size: 400%; animation: gradientShift 15s ease infinite; z-index: -1; opacity: .9; }
 @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
@@ -95,7 +95,7 @@ h1 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(2.2r
 .section { padding: 6rem 1rem; max-width: 1200px; margin: 0 auto; }
 h2 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--text); }
 
-/* About (same visuals) */
+/* About */
 .about-content { background: var(--surface); padding: 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,.1); display: flex; gap: 1rem; align-items: flex-start; }
 .about-image { max-width: 200px; border-radius: 10px; flex-shrink: 0; object-fit: cover; }
 .about-text { flex: 1; }
@@ -108,7 +108,7 @@ h2 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(2rem
 .skill { background: var(--primary-color); color: #fff; padding: 1rem 1.2rem; border-radius: 50px; font-size: 1rem; font-weight: 600; text-align: center; min-height: 44px; max-width: 220px; line-height: 1.3; transition: transform .2s ease, background .2s ease; }
 .skill:hover, .skill:focus-visible { transform: translateY(-2px); background: var(--secondary-color); outline: none; }
 
-/* Projects — card layout (keeps your tone) */
+/* Projects — card layout  */
 .filters { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
 .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .card { background: var(--surface); padding: 1.3rem 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,.08); display: grid; gap: .75rem; }
@@ -145,7 +145,7 @@ h2 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: clamp(2rem
 /* Footer */
 footer { text-align: center; padding: 2rem; background: var(--primary-color); color: #fff; }
 
-/* Responsive (keep your rules) */
+/* Responsive  */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
   #primary-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--primary-color); padding: 1rem 0; z-index: 99; }
@@ -166,3 +166,4 @@ footer { text-align: center; padding: 2rem; background: var(--primary-color); co
   .btn { padding: .9rem 2rem; font-size: 1rem; }
   .skill { font-size: 1rem; padding: .8rem 1.1rem; }
 }
+
