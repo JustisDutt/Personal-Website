@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pre) pre.style.display = 'none';
   });
 
-  /* ---- Typewriter (your vibe) ---- */
+  /* ---- Typewriter ---- */
   const typedName = document.getElementById('typed-name');
   const text = "Hi, I'm Justis Dutt";
   let idx = 0;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.section').forEach(sec => { sec.style.opacity = '1'; sec.style.transform = 'none'; });
   }
 
-  /* ---- Smooth scroll (keep your behavior) ---- */
+  /* ---- Smooth scroll  ---- */
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href') || '';
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(()=>t.classList.remove('show'), 2200);
   }
 
-  /* ---- Projects: your content, now data-driven + filterable ---- */
+  /* ---- Projects: data-driven + filterable ---- */
   const projects = [
     {
       title: 'Customer Database for Construction Company',
@@ -210,4 +210,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 
