@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Justis Dutt's portfolio: Software engineer skilled in Java, JavaScript, Python. Explore my projects and contact me!">
+  <title>Justis Dutt - Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Libraries (keep as before) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+</head>
+<body>
+  <!-- Preloader (same look) -->
+  <div id="preloader" aria-hidden="true">
+    <div class="loader" role="status" aria-label="Loading"></div>
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-initials">JD</span>
+      </div>
+
+      <!-- Theme toggle (new) -->
+      <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">◐</button>
+
+      <!-- Hamburger (accessible) -->
+      <div class="hamburger" id="menu-toggle" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul id="primary-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li><!-- new separate page -->
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="section">
+    <div class="animated-bg"></div>
+    <div class="home-content">
+      <h1 id="typed-name"></h1>
+      <p class="subtitle">Software Engineer | Bachelor's of Science in Computer Science</p>
+      <div class="button-container">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="assets/JustisDuttResume.pdf" class="btn" target="_blank" rel="noopener">View My Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <!-- keep your headshot path/case -->
+      <img src="images/Headshot.jpg" alt="Justis Dutt" class="about-image" loading="lazy" decoding="async">
+      <div class="about-text">
+        <p>My name is Justis Dutt, and I will graduate in December 2025 from California State University, Stanislaus with a Bachelor's in Computer Science. As a Peer Educator for 3 years, I have tutored over 150 students in programming and mathematical concepts, enhancing their understanding of complex topics. I also work part-time as a Construction Technologist at Baron's Construction Services, where I design and implement technology solutions that aim to reduce operational time through standardized procedures.</p>
+        <p>My passion for tech stems from solving challenging problems and creating innovative, user-focused solutions. With over 4 years of experience in software development, I specialize in Java, JavaScript, and Python, and I thrive in collaborative environments, continuously learning new technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <!-- category tabs (new, optional filters) -->
+    <div class="skill-tabs" role="tablist" aria-label="Skill categories">
+      <button class="chip is-active" role="tab" aria-selected="true" data-skill-group="All">All</button>
+      <button class="chip" role="tab" data-skill-group="Languages">Languages</button>
+      <button class="chip" role="tab" data-skill-group="Frontend">Frontend</button>
+      <button class="chip" role="tab" data-skill-group="Backend">Backend</button>
+      <button class="chip" role="tab" data-skill-group="Cloud/DevOps">Cloud/DevOps</button>
+      <button class="chip" role="tab" data-skill-group="Other">Other</button>
+    </div>
+
+    <!-- your skills, now labeled by group -->
+    <div class="skills-container" id="skills-grid" aria-live="polite">
+      <div class="skill" data-group="Languages">Java</div>
+      <div class="skill" data-group="Languages">JavaScript</div>
+      <div class="skill" data-group="Languages">Python</div>
+      <div class="skill" data-group="Frontend">HTML/CSS</div>
+      <div class="skill" data-group="Frontend">React</div>
+      <div class="skill" data-group="Backend">Node.js</div>
+      <div class="skill" data-group="Other">Git</div>
+      <div class="skill" data-group="Backend">SQLite</div>
+      <div class="skill" data-group="Cloud/DevOps">Google Cloud</div>
+      <div class="skill" data-group="Cloud/DevOps">Linux</div>
+      <div class="skill" data-group="Other">Advanced Algorithms</div>
+      <div class="skill" data-group="Cloud/DevOps">CI/CD</div>
+      <div class="skill" data-group="Other">Initiative</div>
+      <div class="skill" data-group="Other">Adaptability</div>
+      <div class="skill" data-group="Other">Teamwork</div>
+      <div class="skill" data-group="Other">Time Management</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <!-- Filter chips -->
+    <div class="filters" role="toolbar" aria-label="Filter projects">
+      <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="Java">Java</button>
+      <button class="chip" data-filter="Python">Python</button>
+      <button class="chip" data-filter="Networking">Networking</button>
+      <button class="chip" data-filter="AI">AI</button>
+    </div>
+
+    <div class="projects-container" id="projects-grid" aria-live="polite">
+      <!-- JS will render your existing projects here -->
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <div class="contact-info">
+      <!-- Email on its own line -->
+      <p class="contact-row"><span class="contact-badge"><a href="mailto:justisdutt@gmail.com">Email: justisdutt@gmail.com</a></span></p>
+
+      <!-- Inline row on desktop/tablet; stacked on mobile -->
+      <div class="contact-row row-inline">
+        <span class="contact-badge"><a href="assets/JustisDuttResume.pdf" target="_blank" rel="noopener">Resume</a></span>
+        <span class="contact-badge"><a href="https://www.linkedin.com/in/justis-dutt-951834224/">LinkedIn</a></span>
+        <span class="contact-badge"><a href="https://github.com/JustisDutt">GitHub</a></span>
+      </div>
+    </div>
+
+    <form id="contact-form" novalidate>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <p class="field-error" id="error-name" role="alert"></p>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <p class="field-error" id="error-email" role="alert"></p>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <p class="field-error" id="error-message" role="alert"></p>
+
+      <button type="submit" class="btn">Send Message</button>
+      <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Justis Dutt. All rights reserved.</p>
+  </footer>
+
+  <!-- small toast -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Keep your script path; defer for safe load ordering -->
+  <script src="script.js" defer></script>
+</body>
+</html>

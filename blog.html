@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Justis Dutt</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Force single-column layout and smooth collapsible behavior -->
+  <style>
+    /* Stack posts one after another */
+    #blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    /* Keep buttons tidy */
+    .card .actions .btn,
+    .card .actions a.btn {
+      display: inline-block;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    /* Collapsible container */
+    .post-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .35s ease, padding .35s ease;
+      padding-top: 0;
+    }
+    .post-body.open {
+      padding-top: .75rem;
+    }
+    .post-body pre { overflow-x: auto; }
+    .post-body img { max-width: 100%; height: auto; }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-initials">JD</span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">◐</button>
+      <div class="hamburger" id="menu-toggle" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+      <ul id="primary-menu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="blog.html" class="nav-link" aria-current="page">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="blog" class="section">
+    <h2>Blog</h2>
+    <div id="blog-grid" class="projects-container" aria-live="polite"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Justis Dutt. All rights reserved.</p>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js" defer></script>
+
+  <!-- Blog renderer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const posts = [
+        {
+          title: 'A Comparison of Type Systems: Java vs. JavaScript',
+          date: '2024-11-15',
+          tags: ['Java','JavaScript','Type Systems'],
+          summary: 'A comparative analysis of how static typing in Java and dynamic typing in JavaScript influence performance, error detection, debugging, and maintainability.',
+          body: `
+            <p>In Fall 2024, I completed an essay for CS4100 that examined the differences between Java’s static type system and JavaScript’s dynamic type system. The goal was to analyze how the contrasting approaches to typing influence software development in areas such as performance, error detection, debugging, and long term maintainability.</p>
+            <p>Java is a statically typed and strongly typed language. This means that variable and expression types are checked during compile time. These constraints make it possible to detect errors early in development, improve predictability, and optimize performance. Java’s system ensures that a variable can only hold data compatible with its declared type, which reduces runtime surprises and makes the language especially suitable for large, complex applications where reliability is critical.</p>
+            <p>JavaScript, on the other hand, is dynamically typed and weakly typed. Variables do not need a declared type and can change types at runtime. This flexibility allows for rapid prototyping and quick iteration, but it also introduces the possibility of runtime errors that are difficult to anticipate. Implicit type coercion is common, and while it speeds up development, it can lead to unexpected behaviors. Debugging in large JavaScript projects is therefore more difficult, as type related issues may spread through the code before being caught.</p>
+            <p>The comparison shows that Java’s static type system promotes performance optimization, reliability, and maintainability. JavaScript’s dynamic type system provides flexibility and supports faster development cycles, particularly in small projects and web applications, but it comes at the cost of error detection and long term stability.</p>
+            <p>In conclusion, Java and JavaScript reflect two different philosophies in programming language design. Java favors strict control and predictability. JavaScript favors flexibility and speed. The choice between them depends on the goals of the project and the needs of the programmer.</p>
+            <p>You can read the full essay <a href="assets/Comparison_Type_Systems.pdf" target="_blank" rel="noopener">here</a>.</p>
+          `
+        },
+      ];
+
+      const grid = document.getElementById('blog-grid');
+
+      function card(p, i) {
+        const dateStr = new Date(p.date).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+        const bodyId = `post-body-${i}`;
+        const hasExternal = !!p.href;
+        const hasBody = !!p.body && !hasExternal;
+
+        return `
+          <article class="card" data-index="${i}">
+            <h3>${p.title}</h3>
+            <p class="blog-meta">${dateStr} • ${p.tags.join(', ')}</p>
+            <p>${p.summary}</p>
+            <div class="actions">
+              ${
+                hasExternal
+                  ? `<a class="btn" href="${p.href}" target="_blank" rel="noopener">Read more</a>`
+                  : hasBody
+                    ? `<button class="btn read-more" data-index="${i}" aria-controls="${bodyId}" aria-expanded="false">Read more</button>`
+                    : ''
+              }
+            </div>
+            ${
+              hasBody
+                ? `<div id="${bodyId}" class="post-body" aria-hidden="true"><div class="post-body-inner">${p.body}</div></div>`
+                : ''
+            }
+          </article>
+        `;
+      }
+
+      if (grid) {
+        const html = posts
+          .sort((a,b)=> new Date(b.date) - new Date(a.date))
+          .map(card)
+          .join('');
+        grid.innerHTML = html;
+
+        // Expand/collapse handler
+        grid.addEventListener('click', (e) => {
+          const btn = e.target.closest('.read-more');
+          if (!btn) return;
+          const idx = btn.dataset.index;
+          const body = document.getElementById(`post-body-${idx}`);
+          if (!body) return;
+
+          const isOpen = body.classList.contains('open');
+          // close all first
+          grid.querySelectorAll('.post-body.open').forEach(el => {
+            el.style.maxHeight = '0';
+            el.classList.remove('open');
+            el.setAttribute('aria-hidden','true');
+            const b = grid.querySelector(`.read-more[data-index="${el.id.replace('post-body-','')}"]`);
+            if (b) { b.setAttribute('aria-expanded','false'); b.textContent='Read more'; }
+          });
+
+          if (!isOpen) {
+            body.classList.add('open');
+            body.setAttribute('aria-hidden','false');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            btn.setAttribute('aria-expanded','true');
+            btn.textContent = 'Hide';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
