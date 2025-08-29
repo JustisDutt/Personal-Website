@@ -8,13 +8,13 @@
 
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Libraries (keep as before) -->
+  <!--Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 </head>
 <body>
-  <!-- Preloader (same look) -->
+  <!-- Preloader -->
   <div id="preloader" aria-hidden="true">
     <div class="loader" role="status" aria-label="Loading"></div>
   </div>
@@ -25,7 +25,7 @@
         <span class="logo-initials">JD</span>
       </div>
 
-      <!-- Theme toggle (new) -->
+      <!-- Theme toggle -->
       <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">◐</button>
 
       <!-- Hamburger (accessible) -->
@@ -59,7 +59,7 @@
   <section id="about" class="section">
     <h2>About Me</h2>
     <div class="about-content">
-      <!-- keep your headshot path/case -->
+    <!-- Image -->
       <img src="images/Headshot.jpg" alt="Justis Dutt" class="about-image" loading="lazy" decoding="async">
       <div class="about-text">
         <p>My name is Justis Dutt, and I will graduate in December 2025 from California State University, Stanislaus with a Bachelor's in Computer Science. As a Peer Educator for 3 years, I have tutored over 150 students in programming and mathematical concepts, enhancing their understanding of complex topics. I also work part-time as a Construction Technologist at Baron's Construction Services, where I design and implement technology solutions that aim to reduce operational time through standardized procedures.</p>
@@ -71,7 +71,7 @@
   <section id="skills" class="section">
     <h2>Skills</h2>
 
-    <!-- category tabs (new, optional filters) -->
+    <!-- category tabs (optional filters) -->
     <div class="skill-tabs" role="tablist" aria-label="Skill categories">
       <button class="chip is-active" role="tab" aria-selected="true" data-skill-group="All">All</button>
       <button class="chip" role="tab" data-skill-group="Languages">Languages</button>
@@ -81,7 +81,7 @@
       <button class="chip" role="tab" data-skill-group="Other">Other</button>
     </div>
 
-    <!-- your skills, now labeled by group -->
+    <!--skills, labeled by group -->
     <div class="skills-container" id="skills-grid" aria-live="polite">
       <div class="skill" data-group="Languages">Java</div>
       <div class="skill" data-group="Languages">JavaScript</div>
@@ -115,7 +115,7 @@
     </div>
 
     <div class="projects-container" id="projects-grid" aria-live="polite">
-      <!-- JS will render your existing projects here -->
+      <!-- JS will render existing projects here -->
     </div>
   </section>
 
@@ -159,7 +159,8 @@
   <!-- small toast -->
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- Keep your script path; defer for safe load ordering -->
+  <!-- Keep script path; defer for safe load ordering -->
   <script src="script.js" defer></script>
 </body>
 </html>
+
