@@ -84,15 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Projects: data-driven + filterable ---- */
   const projects = [
     {
-      title: 'Customer Database for Construction Company',
-      valueProp: 'Internal Java app centralizing customers, projects, invoices.',
-      bullets: [
-        'Reduced data retrieval time by 50% with indexed SQLite.',
-        'Full CRUD functionality and audit fields.'
-      ],
-      stack: ['Java','SQLite','JDBC'],
-      links: { github: '' }, // internal project (no public link)
-      tags: ['Java']
+      title: 'Customer Database Manager',
+      valueProp: 'A full-stack app with login, validation, and instant Cloud Run deploy.',
+      bullets: ['Secure sessions, CRUD operations, and client/server validation','Deploy instantly to Google Cloud Run, scale to zero with no DockerFile required'],
+      stack: ['Node.js/Express','SQLite','Cloud Run'],
+      links: { github: '' }, 
+      tags: ['']
     },
     {
       title: 'Rational Agent PacMan Game',
