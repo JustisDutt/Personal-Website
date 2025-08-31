@@ -86,10 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Customer Database Manager',
       valueProp: 'A full-stack app with login, validation, and instant Cloud Run deploy.',
-      bullets: ['Secure sessions, CRUD operations, and client/server validation','Deploy instantly to Google Cloud Run, scale to zero with no DockerFile required'],
+      bullets: [
+        'Secure sessions, CRUD operations, and client/server validation',
+        'Deploy instantly to Google Cloud Run, scale to zero with no DockerFile required'
+      ],
       stack: ['Node.js/Express','SQLite','Cloud Run'],
-      links: { github: '' }, 
-      tags: ['']
+      links: { 
+        github: 'https://github.com/JustisDutt/Customer-Database',
+        live: 'https://customer-database-273912255588.us-west1.run.app'
+      }, // :contentReference[oaicite:1]{index=1}
+      tags: ['Backend','Cloud/DevOps']
     },
     {
       title: 'Rational Agent PacMan Game',
@@ -126,6 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const projGrid = document.getElementById('projects-grid');
   function projCard(p){
+    const btns = [];
+    if (p.links?.github) btns.push(`<a class="btn" href="${p.links.github}" target="_blank" rel="noopener">GitHub</a>`);
+    if (p.links?.live)   btns.push(`<a class="btn" href="${p.links.live}" target="_blank" rel="noopener">Live Demo</a>`);
     return `
       <article class="card" data-tags="${p.tags.join(' ')}">
         <h3>${p.title}</h3>
@@ -133,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <ul>${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
         <div class="stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
         <div class="actions">
-          ${p.links.github ? `<a class="btn" href="${p.links.github}" target="_blank" rel="noopener">GitHub</a>` : ''}
+          ${btns.join('')}
         </div>
       </article>
     `;
@@ -207,4 +216,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
