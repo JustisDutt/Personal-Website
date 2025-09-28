@@ -130,37 +130,38 @@
 
   <script>
     // Mobile menu toggle
-    const menuToggle=document.getElementById('menu-toggle');
-    const menu=document.getElementById('primary-menu');
-    menuToggle?.addEventListener('click',()=>{
-      const exp=menuToggle.getAttribute('aria-expanded')==='true';
-      menuToggle.setAttribute('aria-expanded',String(!exp));
-      menu.classList.toggle('open');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('primary-menu');
+    menuToggle?.addEventListener('click', () => {
+      const isOpening = !menu.classList.contains('active');
+      menu.classList.toggle('active', isOpening);              // was 'open'
+      menuToggle.setAttribute('aria-expanded', String(isOpening));
+      menuToggle.classList.toggle('active', isOpening);        // keep icon in sync if styled
     });
 
     // Theme toggle persistence
-    const themeToggle=document.getElementById('theme-toggle');
-    if(themeToggle){
-      themeToggle.addEventListener('click',()=>{
-        const html=document.documentElement;
-        const current=html.getAttribute('data-theme')||'auto';
-        const next=current==='light'?'dark':current==='dark'?'light':'light';
-        html.setAttribute('data-theme',next);
-        themeToggle.setAttribute('aria-pressed',String(next==='dark'));
-        localStorage.setItem('theme',next);
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme') || 'auto';
+        const next = current === 'light' ? 'dark' : current === 'dark' ? 'light' : 'light';
+        html.setAttribute('data-theme', next);
+        themeToggle.setAttribute('aria-pressed', String(next === 'dark'));
+        localStorage.setItem('theme', next);
       });
     }
-    const saved=localStorage.getItem('theme');
-    if(saved){
-      document.documentElement.setAttribute('data-theme',saved);
-      if(themeToggle) themeToggle.setAttribute('aria-pressed',String(saved==='dark'));
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      if (themeToggle) themeToggle.setAttribute('aria-pressed', String(saved === 'dark'));
     }
 
     // Read more / Close toggle
-    const btn=document.getElementById('toggle');
-    const bodyEl=document.getElementById('post-body');
-    btn.addEventListener('click',()=>{
-      const isOpen=bodyEl.classList.toggle('open');
+    const btn = document.getElementById('toggle');
+    const bodyEl = document.getElementById('post-body');
+    btn.addEventListener('click', () => {
+      const isOpen = bodyEl.classList.toggle('open');
       bodyEl.setAttribute('aria-hidden', String(!isOpen));
       btn.setAttribute('aria-expanded', String(isOpen));
       btn.textContent = isOpen ? 'Close' : 'Read more';
